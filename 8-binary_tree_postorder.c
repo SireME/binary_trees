@@ -19,5 +19,5 @@ void binary_tree_postorder(const binary_tree_t *tree, void (*func)(int))
 	binary_tree_postorder(tree->right, func);
 
 	/* run function on current root*/
-        func(tree->n);
+	func(tree->n);
 }
