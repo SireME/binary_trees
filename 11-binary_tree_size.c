@@ -11,7 +11,7 @@ size_t binary_tree_size(const binary_tree_t *tree)
 	size_t size = 0;
 
 	if (tree == NULL)
-		return 0;
+		return (0);
 
 	/* traverse to left node and accumulate size */
 	size += binary_tree_size(tree->left);
@@ -22,6 +22,6 @@ size_t binary_tree_size(const binary_tree_t *tree)
 	/* count the current root node */
 	size++;
 
-	return size;
+	return (size);
 }
 
