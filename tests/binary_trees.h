@@ -78,5 +78,6 @@ size_t binary_tree_leaves(const binary_tree_t *tree);
 /*count node with atleast one child*/
 size_t binary_tree_nodes(const binary_tree_t *tree);
 
-
+/*check if binar tree is full*/
+int binary_tree_is_full(const binary_tree_t *tree);
 #endif
