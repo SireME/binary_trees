@@ -8,21 +8,26 @@
 
 int binary_tree_is_full(const binary_tree_t *tree)
 {
-	size_t notfull = 0;
+	int leftfull, rightfull;
 
 	if (tree == NULL)
 		return (0);
 
+	if (tree->left == NULL && tree->right == NULL)
+		return (1);
+
 	/* traverse to left node and accumulate size */
-	notfull = binary_tree_is_full(tree->left);
+	leftfull = binary_tree_is_full(tree->left);
 
 	/* traverse to right node and accumulate size */
-	notfull = binary_tree_is_full(tree->right);
+	rightfull = binary_tree_is_full(tree->right);
 
 	/* determine if node is full */
-	if (tree->left == NULL && tree->right != NULL ||
-			tree->right == NULL && tree->left != NULL)
-		notfull = 1
+	if ((tree->left == NULL && tree->right != NULL) ||
+			(tree->left != NULL && tree->right == NULL))
+		return (0);
 
-	return (notfull);
+
+
+	return (leftfull && rightfull);
 }
